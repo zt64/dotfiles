@@ -1,0 +1,12 @@
+nvidia-settings -l &
+picom -b &
+lxpolkit &
+nm-applet &
+blueman-applet &
+gwe --hide-window &
+openrgb --startminimized -p default &
+discord-canary --start-minimized &
+steam -silent &
+polybar topbar -r &
+thunar --daemon &
+~/.fehbg &
