@@ -1,0 +1,8 @@
+configuration {
+  modi: [combi];
+  combi-modi: [window,drun,ssh];
+  font: "JetBrains Mono Medium 14";
+  theme: "/usr/share/rofi/themes/Arc-Dark.rasi";
+  icon-theme: "Papirus";
+  show-icons: true;
+}
