@@ -15,6 +15,7 @@ bluetoothctl | while read -r; do
 
                 if [ $counter -gt 0 ]; then
                     printf ", %s" "$device_alias"
+
                 else
                     printf " %s" "$device_alias $charge"
                 fi

@@ -1,12 +1,25 @@
 nvidia-settings -l &
+
+# Start picom
 picom -b &
 lxpolkit &
-nm-applet &
 blueman-applet &
 gwe --hide-window &
+udiskie &
+wired &
+light-locker &
+
+# Load RGB profile
 openrgb --startminimized -p default &
 discord-canary --start-minimized &
+
+# Start steam minimized
 steam -silent &
-polybar topbar -r &
+tint2 &
 thunar --daemon &
+
+# Restore fehbg
 ~/.fehbg &
+
+# Start xidlehook daemon
+./scripts/xidlehook.sh &

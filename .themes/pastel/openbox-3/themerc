@@ -35,7 +35,7 @@ window.inactive.title.bg.color: #272C38
 window.label.text.justify: Center
 
 window.active.label.bg: Parentrelative
-window.active.label.text.color: #272c38
+window.active.label.text.color: #FFFFFF
 
 window.inactive.label.bg: Parentrelative
 window.inactive.label.text.color: #272c38
@@ -91,7 +91,7 @@ window.inactive.client.color: #fbdf90
 window.client.padding.height: 0
 
 #window handle and grip
-window.handle.width: 20
+window.handle.width: 1
 
 window.active.grip.bg: Solid Flat
 window.active.grip.bg.color: #272c38
