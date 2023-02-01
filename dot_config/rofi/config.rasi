@@ -1,0 +1,161 @@
+configuration {
+  font: 							    "Iosevka Medium 13";
+  icon-theme:             "Papirus-Dark";
+  fixed-num-lines: 			  true;
+  show-icons: 					  true;
+  sidebar-mode: 			    true;
+  scroll-method: 				  0;
+  window-format: 				  "{c} {t}";
+  click-to-exit: 					true;
+  combi-hide-mode-prefix: false;
+  display-window: 			  " Windows";
+  display-windowcd: 		  "";
+  display-run: 					  " Run";
+  display-ssh: 					  " SSH";
+  display-drun: 				  " Applications";
+  display-combi: 			    "";
+  drun-display-format:    "{name}";
+  disable-history:        true;
+}
+
+@theme "/dev/null"
+
+* {
+  element-background: #585E74;
+  text-color: #FFFFFF;
+  al:  #00000000;
+  bg:  #101010dd;
+  se:  #FFFFFFFF;
+  fg:  #1D212A;
+  accent:  #FC8993;
+}
+
+window {
+  transparency:       "real";
+  background-color:   @bg;
+  text-color:         @fg;
+	border:							2px;
+	border-color:			  @accent;
+  border-radius:      8px;
+	width:							35%;
+  location:           center;
+  x-offset:           0;
+  y-offset:           0;
+}
+
+mainbox {
+  background-color:               @al;
+	border-color:					          @accent;
+  spacing:                       	2%;
+  padding:                        4% 2% 4% 2%;
+}
+
+mode-switcher {
+  background-color:   inherit;
+  spacing:            32px;
+  padding: 						1% 0% 1% 0%;
+}
+
+button {
+  padding: 						1% 1% 1% 1%;
+  spacing:            16px;
+  border-radius:      8px;
+  background-color:   @fg;
+  text-color:         @se;
+  horizontal-align:   0.5;
+}
+
+button selected.normal {
+  background-color: @accent;
+  text-color:       @bg;
+}
+
+prompt {
+	padding: 						1% 0.75% 1% 0.75%;
+	background-color: 	@accent;
+	text-color: 				@fg;
+  border-radius:      8px;
+}
+
+entry {
+  background-color:               @fg;
+  text-color:                     @accent;
+  placeholder-color:              @accent;
+  expand:                         true;
+  horizontal-align:               0.5;
+  placeholder:                    "Search...";
+	padding: 						            1.15% 0.5% 1% 0.5%;
+  blink:                          true;
+  border-radius:                  8px;
+}
+
+inputbar {
+  background-color: inherit;
+	children: 						[ entry ];
+  text-color:           @text-color;
+  expand:               false;
+  spacing:              16px;
+  padding:              0% 0% 1% 0%;
+  border-radius:        8px;
+	border-color:					@accent;
+}
+
+listview {
+  background-color:               @al;
+  scrollbar:                      false;
+  columns:                        2;
+  lines:                          7;
+  spacing:                       	1%;
+  cycle:                          false;
+  dynamic:                        true;
+  layout:                         vertical;
+  fixed-columns:                  false;
+}
+
+element {
+  background-color:     @fg;
+  orientation:          horizontal;
+  border-radius:        8px;
+  padding:              1% 0.5% 1% 0.75%;
+}
+
+element-icon {
+  size: 24px;
+}
+
+element-text {
+  text-color:       	   inherit;
+  expand:                true;
+  horizontal-align:      0;
+  vertical-align:        0.5;
+  margin:                0% 0.25% 0% 0.25%;
+}
+
+element-text, element-icon {
+  background-color: inherit;
+  text-color:       inherit;
+}
+
+element selected.normal, element selected.active {
+  background-color:     @fg;
+  text-color:           @accent;
+  border-color:         @accent;
+  border-radius:        0px 8px 8px 0px;
+  border:							  0% 0% 0% 0.3%;
+}
+
+element normal normal, element alternate normal, element normal.active {
+  text-color:       @se;
+  background-color: @fg;
+}
+
+
+error-message {
+  background-color: @fg;
+  padding: 3px;
+}
+textbox {
+  background-color: @fg;
+  text-color:       @se;
+  padding: 20px;
+}
