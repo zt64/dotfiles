@@ -11,7 +11,7 @@ source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
-export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.local/bin:$XDG_DATA_HOME/go/bin"
 export LS_COLORS=(vivid generate snazzy)
 
 # Configure History
@@ -21,6 +21,7 @@ SAVEHIST=5000
 setopt appendhistory notify
 unsetopt beep nomatch
 
+# History settings
 setopt bang_hist                # Treat The '!' Character Specially During Expansion.
 setopt inc_append_history       # Write To The History File Immediately, Not When The Shell Exits.
 setopt share_history            # Share History Between All Sessions.
@@ -33,6 +34,7 @@ setopt hist_save_no_dups        # Do Not Write A Duplicate Event To The History 
 setopt hist_verify              # Do Not Execute Immediately Upon History Expansion.
 setopt extended_history         # Show Timestamp In History.
 
+# Zinit plugins and snippets
 zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
 zinit light sindresorhus/pure
 
@@ -40,13 +42,14 @@ zinit pack for fzf
 zinit wait lucid light-mode for \
     hlissner/zsh-autopair \
     atinit"zicompinit; zicdreplay" \
-        zdharma-continuum/fast-syntax-highlighting \
-        OMZP::colored-man-pages \
+    zdharma-continuum/fast-syntax-highlighting \
+    OMZP::colored-man-pages \
     atload"_zsh_autosuggest_start" zsh-users/zsh-autosuggestions \
     blockf atpull'zinit creinstall -q .' zsh-users/zsh-completions
 
 zinit snippet OMZL::key-bindings.zsh
 
+# General settings
 autoload -U colors && colors    # Load Colors.
 unsetopt case_glob              # Use Case-Insensitve Globbing.
 setopt globdots                 # Glob Dotfiles As Well.
@@ -56,13 +59,13 @@ setopt autocd                   # Automatically Change Directory If A Directory 
 autoload -Uz url-quote-magic
 zle -N self-insert url-quote-magic
 
-# General.
-setopt brace_ccl                # Allow Brace Character Class List Expansion.
-setopt combining_chars          # Combine Zero-Length Punctuation Characters ( Accents ) With The Base Character.
+# General settings
+setopt brace_ccl                # Allow Brace Character
+setopt combining_chars          # Combine Zero-Length Punctuation Characters (Accents) With The Base Character.
 setopt rc_quotes                # Allow 'Henry''s Garage' instead of 'Henry'\''s Garage'.
 unsetopt mail_warning           # Don't Print A Warning Message If A Mail File Has Been Accessed.
 
-# Jobs.
+# Jobs settings
 setopt long_list_jobs           # List Jobs In The Long Format By Default.
 setopt auto_resume              # Attempt To Resume Existing Job Before Creating A New Process.
 setopt notify                   # Report Status Of Background Jobs Immediately.
@@ -72,7 +75,7 @@ unsetopt check_jobs             # Don't Report On Jobs When Shell Exit.
 
 setopt correct                  # Turn On Corrections
 
-# Completion Options.
+# Completion Options
 setopt complete_in_word         # Complete From Both Ends Of A Word.
 setopt always_to_end            # Move Cursor To The End Of A Completed Word.
 setopt path_dirs                # Perform Path Search Even On Command Names With Slashes.
@@ -84,7 +87,7 @@ setopt no_complete_aliases
 setopt menu_complete            # Do Not Autoselect The First Completion Entry.
 unsetopt flow_control           # Disable Start/Stop Characters In Shell Editor.
 
-# Zstyle.
+# Zstyle
 zstyle ':completion:*' completer _extensions _complete _approximate
 zstyle ':completion:*:*:*:*:*' menu select
 zstyle ':completion:*:matches' group 'yes'
@@ -107,6 +110,7 @@ zstyle ':completion:*:functions' ignored-patterns '(_*|pre(cmd|exec))'
 zstyle ':completion:*' rehash true
 zstyle ':completion:*' list-dirs-first true
 
+# Aliases
 alias l='exa --group-directories-first'
 alias la='exa -a --group-directories-first'
 alias ll='exa -lah --group-directories-first'
